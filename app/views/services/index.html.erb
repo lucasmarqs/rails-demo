@@ -1,0 +1,15 @@
+<h1>Services</h1>
+
+<%= link_to 'Novo', new_service_path %>
+
+<%- @services.each do |service| %>
+  <ul>
+    <li>Nome: <%= service.name %></li>
+    <li>Preço: R$ <%= service.price %></li>
+    <li>Duração: <%= service.duration %> minutos</li>
+    <%- if service.description %>
+      <li>Descrição: <%= service.description %></li>
+    <%- end %>
+    <li><%= link_to 'Ver mais', service_path(service) %></li>
+  </ul>
+<%- end %>
